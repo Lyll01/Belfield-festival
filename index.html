@@ -4,135 +4,227 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Belfield Festival 2026 — 7ème édition les 14 & 15 août au Parc de la Lère, Caussade. Deux jours, deux scènes, une seule mission : te faire vivre un moment hors du temps." />
-  <meta property="og:title" content="Belfield Festival 2026" />
+  <meta property="og:title" content="Belfield Festival 2026 — Entre dans la légende" />
   <meta property="og:description" content="14 & 15 août 2026 — Parc de la Lère, Caussade. 7ème édition." />
+  <meta property="og:image" content="affiche.avif" />
   <title>Belfield Festival 2026 — 14 & 15 août · Caussade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
   <header class="site-header" id="header">
     <a href="#" class="logo">
       <span class="logo-mark">B</span>
-      <span class="logo-text">Belfield Festival</span>
+      <span class="logo-text">Belfield · 7ème Édition</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="nav">
       <a href="#lineup">Lineup</a>
       <a href="#infos">Infos</a>
       <a href="#editions">Éditions</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#" class="btn btn-primary btn-sm">Billetterie</a>
+    <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" class="btn btn-primary btn-sm">Billetterie</a>
     <button class="burger" aria-label="Menu" id="burger">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <div class="marquee" aria-hidden="true">
+  <!-- Top marquee -->
+  <div class="marquee marquee-top" aria-hidden="true">
     <div class="marquee-track">
-      <span>7ème Édition</span><span>·</span>
-      <span>14 & 15 août 2026</span><span>·</span>
-      <span>Parc de la Lère</span><span>·</span>
-      <span>Caussade</span><span>·</span>
-      <span>7ème Édition</span><span>·</span>
-      <span>14 & 15 août 2026</span><span>·</span>
-      <span>Parc de la Lère</span><span>·</span>
-      <span>Caussade</span><span>·</span>
+      <span>7ème Édition</span><span class="dot">◆</span>
+      <span>14 & 15 août 2026</span><span class="dot">◆</span>
+      <span>Parc de la Lère</span><span class="dot">◆</span>
+      <span>Caussade</span><span class="dot">◆</span>
+      <span>7ème Édition</span><span class="dot">◆</span>
+      <span>14 & 15 août 2026</span><span class="dot">◆</span>
+      <span>Parc de la Lère</span><span class="dot">◆</span>
+      <span>Caussade</span><span class="dot">◆</span>
     </div>
   </div>
 
+  <!-- HERO -->
   <section class="hero">
+    <div class="halftone halftone-tl" aria-hidden="true"></div>
+    <div class="halftone halftone-br" aria-hidden="true"></div>
+
+    <!-- Decorative oranges -->
+    <div class="orange orange-left" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="95" fill="#FF9A3C" stroke="#1A0A00" stroke-width="4"/>
+        <circle cx="100" cy="100" r="80" fill="#FFB866"/>
+        <g stroke="#1A0A00" stroke-width="3" fill="none">
+          <line x1="100" y1="20" x2="100" y2="180"/>
+          <line x1="20" y1="100" x2="180" y2="100"/>
+          <line x1="43" y1="43" x2="157" y2="157"/>
+          <line x1="157" y1="43" x2="43" y2="157"/>
+        </g>
+        <circle cx="100" cy="100" r="18" fill="#FFD9A6" stroke="#1A0A00" stroke-width="3"/>
+      </svg>
+    </div>
+
+    <!-- Mascotte goose -->
+    <div class="goose goose-hero" aria-hidden="true">
+      <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="95" rx="40" ry="28" fill="#FFF5E6" stroke="#1A0A00" stroke-width="3"/>
+        <path d="M 55 70 Q 50 30 70 25 Q 85 22 82 45 Q 80 60 75 70 Z" fill="#FFF5E6" stroke="#1A0A00" stroke-width="3"/>
+        <circle cx="76" cy="32" r="3" fill="#1A0A00"/>
+        <path d="M 82 35 L 95 33 L 82 40 Z" fill="#FF7A00" stroke="#1A0A00" stroke-width="2"/>
+        <path d="M 75 110 L 72 125 L 78 125 Z" fill="#FF7A00" stroke="#1A0A00" stroke-width="2"/>
+        <path d="M 55 110 L 52 125 L 58 125 Z" fill="#FF7A00" stroke="#1A0A00" stroke-width="2"/>
+        <path d="M 35 90 Q 20 85 25 100" fill="#FFF5E6" stroke="#1A0A00" stroke-width="3"/>
+      </svg>
+    </div>
+
     <div class="hero-content">
-      <p class="eyebrow">7ème Édition</p>
-      <h1 class="hero-title">Belfield<br />Festival</h1>
-      <p class="hero-meta">14 &amp; 15 août 2026<br />Parc de la Lère · Caussade</p>
+      <p class="eyebrow">7ème Édition · Entre dans la légende</p>
+
+      <div class="hero-title">
+        <span class="title-ghost">Belfield</span>
+        <span class="title-ghost">Belfield</span>
+        <span class="title-main">Belfield</span>
+        <span class="title-sub">Festival</span>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-block">
+          <span class="meta-label">Dates</span>
+          <span class="meta-value">14 &amp; 15 Août 2026</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-block">
+          <span class="meta-label">Lieu</span>
+          <span class="meta-value">Parc de la Lère — Caussade</span>
+        </div>
+      </div>
+
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">Prendre mes billets</a>
-        <a href="#lineup" class="btn btn-ghost">Découvrir le lineup</a>
+        <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" class="btn btn-primary btn-lg">🔥 Prendre mes billets</a>
+        <a href="#lineup" class="btn btn-outline btn-lg">Voir le lineup</a>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hero-circle"></div>
-      <div class="hero-dot hero-dot-1"></div>
-      <div class="hero-dot hero-dot-2"></div>
-    </div>
   </section>
 
+  <!-- COUNTDOWN -->
   <section class="countdown-section">
-    <p class="section-label">Le festival commence dans</p>
-    <div class="countdown" id="countdown">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Jours</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Heures</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Secondes</span></div>
+    <div class="container">
+      <p class="section-label gold">Le festival commence dans</p>
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Jours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Heures</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Secondes</span></div>
+      </div>
     </div>
   </section>
 
+  <!-- Marquee 2 -->
+  <div class="marquee marquee-purple" aria-hidden="true">
+    <div class="marquee-track reverse">
+      <span>Deux jours</span><span class="dot">✦</span>
+      <span>Deux scènes</span><span class="dot">✦</span>
+      <span>Une seule mission</span><span class="dot">✦</span>
+      <span>Hors du temps</span><span class="dot">✦</span>
+      <span>Deux jours</span><span class="dot">✦</span>
+      <span>Deux scènes</span><span class="dot">✦</span>
+      <span>Une seule mission</span><span class="dot">✦</span>
+      <span>Hors du temps</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
   <section class="intro">
     <div class="container narrow">
-      <h2 class="section-title">Entre dans la légende</h2>
+      <h2 class="section-title">Entre dans<br/>la légende</h2>
       <p class="lead">
         Les 14 &amp; 15 août 2026, le Belfield Festival revient transformer Caussade
-        en épicentre de la fête pour une 7ème fois. Deux jours. Deux scènes.
-        Une seule mission : te faire vivre un moment hors du temps.
+        en épicentre de la fête pour une 7ème fois.
+        Deux jours. Deux scènes. Une seule mission : te faire vivre un moment hors du temps.
       </p>
+      <p class="lead">
+        Des DJs prêts à retourner le parc, des basses qui frappent au cœur,
+        des drops qui unissent des centaines de voix, et cette atmosphère unique
+        que seul Belfield sait créer. Ici, on ne vient pas juste écouter du son.
+        <strong>On vient le ressentir ;)</strong>
+      </p>
+
       <div class="stages">
-        <article class="stage">
-          <div class="stage-icon">01</div>
+        <article class="stage stage-main">
+          <div class="stage-tag">🌪 Scène 01</div>
           <h3>La Mainstage</h3>
-          <p>Massive, vibrante, fédératrice. La scène principale où les basses frappent au cœur et où des centaines de voix s'unissent sur chaque drop.</p>
+          <p>Massive. Vibrante. Fédératrice. La scène principale où les basses frappent au cœur et où des centaines de voix s'unissent sur chaque drop.</p>
         </article>
-        <article class="stage">
-          <div class="stage-icon">02</div>
+        <article class="stage stage-quercy">
+          <div class="stage-tag">🔥 Scène 02</div>
           <h3>La Quercy Stage</h3>
-          <p>Plus brute, plus proche, plus intense. Une scène à l'énergie crue pour ressentir la musique comme jamais.</p>
+          <p>Plus brute. Plus proche. Plus intense. Une scène à l'énergie crue pour ressentir la musique comme jamais auparavant.</p>
         </article>
       </div>
+
+      <ul class="manifesto">
+        <li>✨ Belfield, c'est une communauté.</li>
+        <li>✨ Belfield, c'est une claque collective.</li>
+        <li>✨ Belfield, c'est ton week-end de l'été.</li>
+      </ul>
     </div>
   </section>
 
+  <!-- LINEUP -->
   <section class="lineup" id="lineup">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Artistes annoncés</p>
+        <p class="section-label">// Artistes annoncés</p>
         <h2 class="section-title">Lineup 2026</h2>
       </div>
       <div class="artists-grid">
         <article class="artist-card">
-          <div class="artist-img"></div>
-          <h3>Artiste 01</h3>
-          <p>Techno · Mainstage</p>
+          <div class="artist-img" data-artist="01"></div>
+          <div class="artist-info">
+            <h3>Artiste 01</h3>
+            <p>Techno · Mainstage</p>
+          </div>
         </article>
         <article class="artist-card">
-          <div class="artist-img"></div>
-          <h3>Artiste 02</h3>
-          <p>House · Quercy Stage</p>
+          <div class="artist-img" data-artist="02"></div>
+          <div class="artist-info">
+            <h3>Artiste 02</h3>
+            <p>House · Quercy Stage</p>
+          </div>
         </article>
         <article class="artist-card">
-          <div class="artist-img"></div>
-          <h3>Artiste 03</h3>
-          <p>Hard Techno · Mainstage</p>
+          <div class="artist-img" data-artist="03"></div>
+          <div class="artist-info">
+            <h3>Artiste 03</h3>
+            <p>Hard Techno · Mainstage</p>
+          </div>
         </article>
         <article class="artist-card">
-          <div class="artist-img"></div>
-          <h3>Artiste 04</h3>
-          <p>Trance · Mainstage</p>
+          <div class="artist-img" data-artist="04"></div>
+          <div class="artist-info">
+            <h3>Artiste 04</h3>
+            <p>Trance · Mainstage</p>
+          </div>
         </article>
         <article class="artist-card">
-          <div class="artist-img"></div>
-          <h3>Artiste 05</h3>
-          <p>Drum &amp; Bass · Quercy Stage</p>
+          <div class="artist-img" data-artist="05"></div>
+          <div class="artist-info">
+            <h3>Artiste 05</h3>
+            <p>Drum &amp; Bass · Quercy</p>
+          </div>
         </article>
         <article class="artist-card">
-          <div class="artist-img"></div>
-          <h3>Artiste 06</h3>
-          <p>Electro · Quercy Stage</p>
+          <div class="artist-img" data-artist="06"></div>
+          <div class="artist-info">
+            <h3>Artiste 06</h3>
+            <p>Electro · Quercy</p>
+          </div>
         </article>
       </div>
       <div class="section-footer">
@@ -141,46 +233,54 @@
     </div>
   </section>
 
+  <!-- TICKETS BANNER -->
   <section class="tickets-banner">
+    <div class="halftone halftone-tickets" aria-hidden="true"></div>
     <div class="container narrow center">
-      <h2 class="section-title light">Les places sont limitées</h2>
+      <p class="section-label gold">// Billetterie</p>
+      <h2 class="section-title huge">Les places<br/>sont limitées</h2>
       <p class="lead light">Réserve dès maintenant ton pass et rejoins la communauté Belfield pour le week-end de l'été.</p>
       <div class="pass-types">
         <div class="pass">
-          <p class="pass-label">Pass 1 jour</p>
-          <p class="pass-desc">Accès Vendredi ou Samedi</p>
+          <p class="pass-label">Pass 1 Jour</p>
+          <p class="pass-desc">Vendredi ou Samedi</p>
         </div>
         <div class="pass">
-          <p class="pass-label">Pass 2 jours</p>
-          <p class="pass-desc">Accès complet au festival</p>
+          <p class="pass-label">Pass 2 Jours</p>
+          <p class="pass-desc">Festival complet</p>
         </div>
       </div>
-      <a href="#" class="btn btn-light">Accéder à la billetterie</a>
+      <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" class="btn btn-accent btn-lg">🎟 Accéder à la billetterie</a>
     </div>
   </section>
 
+  <!-- INFOS -->
   <section class="infos" id="infos">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Le lieu</p>
-        <h2 class="section-title">Parc de la Lère, Caussade</h2>
+        <p class="section-label">// Le lieu</p>
+        <h2 class="section-title">Parc de la Lère,<br/>Caussade (82)</h2>
       </div>
       <div class="infos-grid">
         <div class="info-card">
+          <div class="info-num">01</div>
           <h3>Adresse</h3>
-          <p>Parc de la Lère<br />82300 Caussade<br />Tarn-et-Garonne, France</p>
+          <p>Parc de la Lère<br/>82300 Caussade<br/>Tarn-et-Garonne</p>
         </div>
         <div class="info-card">
+          <div class="info-num">02</div>
           <h3>En voiture</h3>
-          <p>Sortie A20 Caussade. Parkings gratuits à proximité du site.</p>
+          <p>Sortie A20 Caussade<br/>Parkings gratuits<br/>sur site</p>
         </div>
         <div class="info-card">
+          <div class="info-num">03</div>
           <h3>En train</h3>
-          <p>Gare de Caussade, ligne Toulouse — Montauban. Navettes prévues.</p>
+          <p>Gare de Caussade<br/>Ligne Toulouse–Montauban<br/>Navettes prévues</p>
         </div>
         <div class="info-card">
+          <div class="info-num">04</div>
           <h3>Hébergement</h3>
-          <p>Camping sur site disponible. Hôtels et gîtes partenaires à proximité.</p>
+          <p>Camping sur site<br/>Hôtels &amp; gîtes<br/>partenaires</p>
         </div>
       </div>
       <div class="section-footer">
@@ -189,76 +289,107 @@
     </div>
   </section>
 
+  <!-- EDITIONS -->
   <section class="editions" id="editions">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Ils étaient là</p>
-        <h2 class="section-title">Les éditions précédentes</h2>
+        <p class="section-label">// Ils y étaient</p>
+        <h2 class="section-title">6 éditions<br/>de folie</h2>
       </div>
       <div class="gallery">
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
+        <div class="gallery-item" data-year="2019"><span>2019</span></div>
+        <div class="gallery-item" data-year="2021"><span>2021</span></div>
+        <div class="gallery-item" data-year="2022"><span>2022</span></div>
+        <div class="gallery-item" data-year="2023"><span>2023</span></div>
+        <div class="gallery-item" data-year="2024"><span>2024</span></div>
+        <div class="gallery-item" data-year="2025"><span>2025</span></div>
       </div>
       <div class="section-footer">
-        <a href="#" class="link-arrow">Revoir les éditions →</a>
+        <a href="#" class="link-arrow">Revoir toutes les éditions →</a>
       </div>
     </div>
   </section>
 
+  <!-- NEWSLETTER -->
   <section class="newsletter" id="contact">
+    <div class="goose goose-news" aria-hidden="true">
+      <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="60" cy="95" rx="40" ry="28" fill="#FFF5E6" stroke="#1A0A00" stroke-width="3"/>
+        <path d="M 55 70 Q 50 30 70 25 Q 85 22 82 45 Q 80 60 75 70 Z" fill="#FFF5E6" stroke="#1A0A00" stroke-width="3"/>
+        <circle cx="76" cy="32" r="3" fill="#1A0A00"/>
+        <path d="M 82 35 L 95 33 L 82 40 Z" fill="#FF7A00" stroke="#1A0A00" stroke-width="2"/>
+        <path d="M 75 110 L 72 125 L 78 125 Z" fill="#FF7A00" stroke="#1A0A00" stroke-width="2"/>
+        <path d="M 55 110 L 52 125 L 58 125 Z" fill="#FF7A00" stroke="#1A0A00" stroke-width="2"/>
+      </svg>
+    </div>
     <div class="container narrow center">
-      <h2 class="section-title">Reste dans la boucle</h2>
+      <p class="section-label">// Reste dans la boucle</p>
+      <h2 class="section-title">Rejoins<br/>la meute</h2>
       <p class="lead">Sois le premier informé des annonces artistes et des offres early bird.</p>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci ! Tu es dans la boucle.');">
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ Dans la boucle'; this.querySelector('input').value='';">
         <input type="email" placeholder="ton@email.fr" required aria-label="Email" />
         <button type="submit" class="btn btn-primary">S'inscrire</button>
       </form>
-      <p class="fine-print">En t'inscrivant, tu acceptes de recevoir nos emails. Désinscription possible à tout moment.</p>
+      <p class="fine-print">Pas de spam. Que du son. Désinscription possible à tout moment.</p>
     </div>
   </section>
 
+  <!-- Marquee bottom -->
+  <div class="marquee marquee-bottom" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Belfield Festival 2026</span><span class="dot">◆</span>
+      <span>Entre dans la légende</span><span class="dot">◆</span>
+      <span>Caussade</span><span class="dot">◆</span>
+      <span>14 & 15 Août</span><span class="dot">◆</span>
+      <span>Belfield Festival 2026</span><span class="dot">◆</span>
+      <span>Entre dans la légende</span><span class="dot">◆</span>
+      <span>Caussade</span><span class="dot">◆</span>
+      <span>14 & 15 Août</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
-        <p class="footer-logo">Belfield Festival</p>
-        <p class="footer-tag">Caussade — depuis 2019</p>
+      <div class="footer-brand">
+        <p class="footer-logo">Belfield<br/>Festival</p>
+        <p class="footer-tag">Caussade · depuis 2019</p>
       </div>
       <div>
-        <p class="footer-title">Le festival</p>
+        <p class="footer-title">// Festival</p>
         <a href="#lineup">Lineup</a>
         <a href="#infos">Infos pratiques</a>
         <a href="#editions">Éditions</a>
+        <a href="#">Billetterie</a>
       </div>
       <div>
-        <p class="footer-title">Suivre</p>
+        <p class="footer-title">// Suivre</p>
         <a href="#">Instagram</a>
         <a href="#">Facebook</a>
         <a href="#">SoundCloud</a>
+        <a href="#">TikTok</a>
       </div>
       <div>
-        <p class="footer-title">Légal</p>
+        <p class="footer-title">// Légal</p>
         <a href="#">Mentions légales</a>
         <a href="#">Confidentialité</a>
+        <a href="#">Presse</a>
         <a href="#">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Belfield Festival — Tous droits réservés</p>
+      <p>© 2026 Belfield Festival — Fait avec 🧡 à Caussade</p>
     </div>
   </footer>
 
   <script>
-    // Countdown
+    // Countdown to 14 août 2026
     const target = new Date('2026-08-14T00:00:00+02:00').getTime();
     const dEl = document.getElementById('cd-days');
     const hEl = document.getElementById('cd-hours');
     const mEl = document.getElementById('cd-mins');
     const sEl = document.getElementById('cd-secs');
-    function pad(n) { return String(n).padStart(2, '0'); }
+    const pad = n => String(n).padStart(2, '0');
     function tick() {
       const diff = target - Date.now();
       if (diff <= 0) { dEl.textContent = hEl.textContent = mEl.textContent = sEl.textContent = '00'; return; }
@@ -278,7 +409,22 @@
 
     // Burger
     const burger = document.getElementById('burger');
-    burger.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+    const nav = document.getElementById('nav');
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+    nav.addEventListener('click', e => {
+      if (e.target.tagName === 'A') { nav.classList.remove('open'); burger.classList.remove('open'); }
+    });
+
+    // Goose easter egg
+    document.querySelectorAll('.goose').forEach(g => {
+      g.addEventListener('click', () => {
+        g.classList.add('honk');
+        setTimeout(() => g.classList.remove('honk'), 600);
+      });
+    });
   </script>
 </body>
 </html>
