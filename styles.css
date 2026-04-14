@@ -762,10 +762,23 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 }
 .lineup .section-header { text-align: center; }
 
+.lineup .section-header { text-align: center; }
+.lineup-intro {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  color: var(--color-cream);
+  margin: 1.5rem auto 0;
+  max-width: 560px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
 .artists-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   position: relative;
   z-index: 2;
 }
@@ -775,6 +788,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   box-shadow: 7px 7px 0 var(--color-primary);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .artist-card:hover {
   transform: translate(-4px, -4px);
@@ -782,7 +797,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 }
 .artist-img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   background: linear-gradient(135deg, var(--color-secondary-deep), var(--color-secondary));
   position: relative;
   overflow: hidden;
@@ -791,30 +806,80 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   align-items: center;
   justify-content: center;
 }
-.artist-img::before {
-  content: attr(data-artist);
-  font-family: var(--font-display);
-  font-size: 8rem;
-  color: var(--color-cream);
-  opacity: 0.2;
-  transition: opacity 0.4s var(--ease);
+.artist-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s var(--ease), filter 0.4s var(--ease);
+  filter: saturate(1.05);
+  background: var(--color-ink);
 }
+.artist-card:hover .artist-img img { transform: scale(1.06); }
 .artist-img::after {
   content: '';
   position: absolute;
   inset: 0;
   background-image: radial-gradient(circle, var(--color-ink) 1px, transparent 1.5px);
   background-size: 8px 8px;
-  opacity: 0.4;
+  opacity: 0.25;
   mix-blend-mode: multiply;
+  pointer-events: none;
   transition: opacity 0.4s var(--ease);
 }
-.artist-card:hover .artist-img::before { opacity: 0.4; }
-.artist-card:hover .artist-img { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); }
+.artist-card:hover .artist-img::after { opacity: 0.15; }
+
+.artist-placeholder {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  color: var(--color-cream);
+  opacity: 0.35;
+  line-height: 1;
+  -webkit-text-stroke: 3px var(--color-ink);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.05); }
+}
+.artist-card.coming .artist-img {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-secondary-deep),
+    var(--color-secondary-deep) 14px,
+    var(--color-secondary) 14px,
+    var(--color-secondary) 28px
+  );
+}
 
 .artist-info {
-  padding: 1.25rem 1.5rem;
+  padding: 0.6rem 0.85rem;
   background: var(--color-cream);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.artist-status {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-cream);
+  background: var(--color-primary);
+  padding: 0.15rem 0.45rem;
+  border: 2px solid var(--color-ink);
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+.artist-status.soon {
+  background: var(--color-cream);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
 }
 .artist-card h3 {
   font-family: var(--font-display);
@@ -827,12 +892,53 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 }
 .artist-card p {
   font-family: var(--font-accent);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-ink);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 600;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lineup-teaser {
+  margin-top: 3.5rem;
+  padding: 2.5rem 2rem;
+  background: var(--color-ink);
+  border: 3px solid var(--color-primary);
+  box-shadow: 8px 8px 0 var(--color-primary);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.teaser-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--color-cream);
+  letter-spacing: 0.05em;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.teaser-text strong {
+  color: var(--color-primary);
+  font-weight: 400;
+}
+.teaser-socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.teaser-socials .btn-outline {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-primary);
+}
+.teaser-socials .btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-cream);
 }
 
 /* ============ Tickets banner ============ */
@@ -1192,7 +1298,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   .stages { grid-template-columns: 1fr; }
   .artists-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .artist-card h3 { font-size: 1.25rem; }
-  .artist-img::before { font-size: 5rem; }
+  .artist-placeholder { font-size: 5rem; }
+  .lineup-teaser { padding: 2rem 1.25rem; }
 
   .infos-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 1rem; }
