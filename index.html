@@ -156,15 +156,46 @@
       </p>
 
       <div class="stages">
-        <article class="stage stage-main">
-          <div class="stage-tag">🌪 Scène 01</div>
-          <h3>La Mainstage</h3>
-          <p>Massive. Vibrante. Fédératrice. La scène principale où les basses frappent au cœur et où des centaines de voix s'unissent sur chaque drop.</p>
+        <article class="stage stage-main" data-stage="mainstage">
+          <div class="stage-slider">
+            <div class="stage-track">
+              <div class="stage-slide"><img src="images/Belfield_2024_218_sur_308_gv72jt.jpg" alt="La Mainstage — photo 1" loading="lazy"/></div>
+              <div class="stage-slide"><img src="images/image.jpg" alt="La Mainstage — photo 2" loading="lazy"/></div>
+              <div class="stage-slide"><img src="images/Belfield_2024_218_sur_308_gv72jt.jpg" alt="La Mainstage — photo 3" loading="lazy"/></div>
+            </div>
+            <div class="stage-overlay"></div>
+          </div>
+          <div class="stage-content">
+            <div class="stage-tag">🌪 Scène 01</div>
+            <h3>La Mainstage</h3>
+            <p>Massive. Vibrante. Fédératrice. La scène principale où les basses frappent au cœur et où des centaines de voix s'unissent sur chaque drop.</p>
+          </div>
+          <div class="stage-dots" role="tablist" aria-label="Photos Mainstage">
+            <button class="stage-dot active" data-index="0" aria-label="Photo 1"></button>
+            <button class="stage-dot" data-index="1" aria-label="Photo 2"></button>
+            <button class="stage-dot" data-index="2" aria-label="Photo 3"></button>
+          </div>
         </article>
-        <article class="stage stage-quercy">
-          <div class="stage-tag">🔥 Scène 02</div>
-          <h3>La Quercy Stage</h3>
-          <p>Plus brute. Plus proche. Plus intense. Une scène à l'énergie crue pour ressentir la musique comme jamais auparavant.</p>
+
+        <article class="stage stage-quercy" data-stage="quercy">
+          <div class="stage-slider">
+            <div class="stage-track">
+              <div class="stage-slide"><img src="images/image.jpg" alt="La Quercy Stage — photo 1" loading="lazy"/></div>
+              <div class="stage-slide"><img src="images/Belfield_2024_218_sur_308_gv72jt.jpg" alt="La Quercy Stage — photo 2" loading="lazy"/></div>
+              <div class="stage-slide"><img src="images/image.jpg" alt="La Quercy Stage — photo 3" loading="lazy"/></div>
+            </div>
+            <div class="stage-overlay"></div>
+          </div>
+          <div class="stage-content">
+            <div class="stage-tag">🔥 Scène 02</div>
+            <h3>La Quercy Stage</h3>
+            <p>Plus brute. Plus proche. Plus intense. Une scène à l'énergie crue pour ressentir la musique comme jamais auparavant.</p>
+          </div>
+          <div class="stage-dots" role="tablist" aria-label="Photos Quercy Stage">
+            <button class="stage-dot active" data-index="0" aria-label="Photo 1"></button>
+            <button class="stage-dot" data-index="1" aria-label="Photo 2"></button>
+            <button class="stage-dot" data-index="2" aria-label="Photo 3"></button>
+          </div>
         </article>
       </div>
 
@@ -243,10 +274,12 @@
       <div class="pass-types">
         <div class="pass">
           <p class="pass-label">Pass 1 Jour</p>
+          <p class="pass-price"><span class="price-from">dès</span> 23,99€</p>
           <p class="pass-desc">Vendredi ou Samedi</p>
         </div>
         <div class="pass">
           <p class="pass-label">Pass 2 Jours</p>
+          <p class="pass-price"><span class="price-from">dès</span> 35,99€</p>
           <p class="pass-desc">Festival complet</p>
         </div>
       </div>
@@ -324,7 +357,7 @@
     </div>
     <div class="container narrow center">
       <p class="section-label">// Reste dans la boucle</p>
-      <h2 class="section-title">Rejoins<br/>la meute</h2>
+      <h2 class="section-title">Restes<br/>informé</h2>
       <p class="lead">Sois le premier informé des annonces artistes et des offres early bird.</p>
       <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ Dans la boucle'; this.querySelector('input').value='';">
         <input type="email" placeholder="ton@email.fr" required aria-label="Email" />
@@ -364,8 +397,8 @@
       </div>
       <div>
         <p class="footer-title">// Suivre</p>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
+        <a href="https://www.instagram.com/belfield.festival/">Instagram</a>
+        <a href="https://www.facebook.com/p/Belfield-Events-100092731103925/">Facebook</a>
         <a href="#">SoundCloud</a>
         <a href="#">TikTok</a>
       </div>
@@ -424,6 +457,32 @@
         g.classList.add('honk');
         setTimeout(() => g.classList.remove('honk'), 600);
       });
+    });
+
+    // Stage sliders
+    document.querySelectorAll('.stage').forEach(stage => {
+      const track = stage.querySelector('.stage-track');
+      const slides = stage.querySelectorAll('.stage-slide');
+      const dots = stage.querySelectorAll('.stage-dot');
+      if (!track || slides.length < 2) return;
+      let index = 0;
+      let timer;
+
+      const go = i => {
+        index = (i + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, di) => d.classList.toggle('active', di === index));
+      };
+      const start = () => { timer = setInterval(() => go(index + 1), 4500); };
+      const stop = () => clearInterval(timer);
+
+      dots.forEach(d => d.addEventListener('click', () => {
+        go(Number(d.dataset.index));
+        stop(); start();
+      }));
+      stage.addEventListener('mouseenter', stop);
+      stage.addEventListener('mouseleave', start);
+      start();
     });
   </script>
 </body>
