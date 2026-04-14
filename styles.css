@@ -1162,6 +1162,14 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   box-shadow: 6px 6px 0 var(--color-secondary);
 }
 .newsletter-form input::placeholder { color: var(--color-text-muted); }
+.newsletter-form .hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .fine-print {
   font-family: var(--font-accent);
   font-size: 0.85rem;
