@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /pages/merci.html
+Disallow: /pages/desinscription.html
 
 Sitemap: https://belfield-festival.fr/sitemap.xml
