@@ -1063,6 +1063,56 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   font-weight: 500;
 }
 
+/* ============ Sur place preview ============ */
+.surplace-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.surplace-preview-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 2rem 1.75rem;
+  background: var(--color-ink);
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-secondary);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.surplace-preview-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--color-secondary);
+}
+.surplace-preview-icon {
+  font-size: 2.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  border: 3px solid var(--color-ink);
+}
+.surplace-preview-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.surplace-preview-card p {
+  color: var(--color-cream);
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
 /* ============ Editions ============ */
 .editions {
   padding: 7rem 0;
@@ -1310,6 +1360,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   .lineup-teaser { padding: 2rem 1.25rem; }
 
   .infos-grid { grid-template-columns: 1fr; }
+  .surplace-preview { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .gallery-item span { font-size: 2.5rem; }
 
