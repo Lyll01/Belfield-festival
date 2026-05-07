@@ -901,6 +901,30 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   text-align: center;
 }
 
+.lineup-more-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+.lineup-more-hint p {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.more-dots {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+}
+
 .lineup-teaser {
   margin-top: 3.5rem;
   padding: 2.5rem 2rem;
