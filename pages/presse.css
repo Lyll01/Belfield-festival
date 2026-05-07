@@ -303,6 +303,25 @@
   color: var(--color-cream);
 }
 
+/* Kit email note */
+.kit-email-note {
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.7;
+}
+.kit-email-note a {
+  color: var(--color-secondary);
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+}
+.kit-email-note a:hover {
+  color: var(--color-ink);
+}
+
 /* ====== Accréditation ====== */
 .accred-card {
   background: var(--color-ink);
@@ -358,6 +377,22 @@
 .accred-content .btn-primary:hover {
   background: var(--color-cream);
   box-shadow: 7px 7px 0 var(--color-primary);
+}
+.accred-email {
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 245, 230, 0.65);
+  font-weight: 500;
+}
+.accred-email a {
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-primary);
+}
+.accred-email a:hover {
+  color: var(--color-cream);
+  border-color: var(--color-cream);
 }
 .accred-deco {
   font-family: var(--font-display);
