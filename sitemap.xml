@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://belfield-festival.fr/</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://belfield-festival.fr/affiche-og.jpg</image:loc>
+      <image:title>Affiche officielle du Belfield Festival 2026</image:title>
+      <image:caption>Belfield Festival 2026 — festival électro et techno les 14 &amp; 15 août à Caussade</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://belfield-festival.fr/pages/histoire.html</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://belfield-festival.fr/pages/infos.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://belfield-festival.fr/pages/presse.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://belfield-festival.fr/pages/contact.html</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://belfield-festival.fr/pages/infos.html</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://belfield-festival.fr/pages/mentions-legales.html</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

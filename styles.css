@@ -45,6 +45,19 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 
+/* Accessible / SEO text, visually hidden */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ============ Grain overlay ============ */
 .grain {
   position: fixed;
@@ -1353,6 +1366,54 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   letter-spacing: 0.12em;
 }
 
+/* ============ FAQ ============ */
+.faq { padding: 6rem 0; position: relative; z-index: 2; }
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.faq-item {
+  background: var(--color-cream);
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-secondary);
+  transition: box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.faq-item[open] { box-shadow: 5px 5px 0 var(--color-primary); }
+.faq-item summary {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  padding: 1.15rem 1.4rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-secondary);
+  transition: transform 0.2s var(--ease);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  margin: 0;
+  padding: 0 1.4rem 1.3rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+.faq-item p strong { color: var(--color-ink); }
+
 /* ============ Responsive ============ */
 @media (max-width: 1024px) {
   .artists-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1383,7 +1444,9 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   .logo-text { display: none; }
 
   .hero { padding: 3rem var(--gutter) 4rem; min-height: auto; }
-  .intro, .lineup, .tickets-banner, .infos, .editions, .newsletter { padding: 5rem 0; }
+  .intro, .lineup, .tickets-banner, .infos, .editions, .newsletter, .faq { padding: 5rem 0; }
+  .faq-item summary { font-size: 1rem; padding: 1rem 1.1rem; }
+  .faq-item p { padding: 0 1.1rem 1.1rem; }
 
   .section-title { text-shadow: 3px 3px 0 var(--color-ink), 6px 6px 0 var(--color-primary); }
   .hero-meta { flex-direction: column; gap: 1rem; padding: 1rem 1.25rem; }
