@@ -1,0 +1,276 @@
+/* ====== Lineup page ====== */
+.lineup-page {
+  border-bottom: 3px solid var(--color-ink);
+}
+
+/* ---- Hero (même langage que infos) ---- */
+.lineup-hero {
+  padding: 10rem var(--gutter) 4rem;
+  text-align: center;
+  position: relative;
+}
+.lineup-hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 240px;
+  height: 240px;
+  background-image: radial-gradient(circle, var(--color-ink) 1.8px, transparent 2px);
+  background-size: 14px 14px;
+  opacity: 0.3;
+  mask-image: radial-gradient(circle, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 75%);
+  pointer-events: none;
+}
+.lineup-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+  width: 200px;
+  height: 200px;
+  background-image: radial-gradient(circle, var(--color-ink) 1.5px, transparent 2px);
+  background-size: 12px 12px;
+  opacity: 0.25;
+  mask-image: radial-gradient(circle, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 75%);
+  pointer-events: none;
+}
+
+.lineup-title {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 2rem;
+  line-height: 0.85;
+}
+.lineup-title .title-ghost,
+.lineup-title .title-main {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 13vw, 11rem);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  display: block;
+  transform: scaleY(1.12);
+  transform-origin: center;
+  font-weight: 400;
+}
+.lineup-title .title-ghost {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-secondary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: scaleY(1.12) translateY(-10px);
+  opacity: 0.75;
+}
+.lineup-title .title-main {
+  position: relative;
+  color: var(--color-secondary);
+  -webkit-text-stroke: 2px var(--color-ink);
+  text-shadow: 5px 5px 0 var(--color-ink), 10px 10px 0 var(--color-primary);
+}
+
+.lineup-subtitle {
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  color: var(--color-ink);
+  max-width: 640px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ---- Board ---- */
+.lineup-board {
+  padding: 3rem 0 6rem;
+  position: relative;
+}
+
+/* ---- Onglets jours ---- */
+.day-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+.day-tab {
+  font-family: var(--font-display);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  padding: 0.7rem 2.2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease),
+              background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.day-tab:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+.day-tab .day-tab-label {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.day-tab .day-tab-date {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 0.35rem;
+  opacity: 0.8;
+}
+.day-tab.active {
+  background: var(--color-secondary);
+  color: var(--color-cream);
+  box-shadow: 5px 5px 0 var(--color-primary);
+}
+.day-tab.active:hover {
+  box-shadow: 8px 8px 0 var(--color-primary);
+}
+
+/* ---- Panneaux jours ---- */
+.day-panel {
+  display: none;
+}
+.day-panel.active {
+  display: block;
+  animation: dayFade 0.4s var(--ease);
+}
+@keyframes dayFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Bloc scène ---- */
+.stage-block {
+  margin-bottom: 3.5rem;
+}
+.stage-block:last-child {
+  margin-bottom: 0;
+}
+.stage-block-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--color-ink);
+  padding-bottom: 0.8rem;
+}
+.stage-block-tag {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-cream);
+  background: var(--color-ink);
+  padding: 0.3rem 0.7rem;
+  border: 2px solid var(--color-ink);
+  flex-shrink: 0;
+}
+.stage-block-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+  line-height: 1;
+}
+.stage-block-main .stage-block-title {
+  color: var(--color-secondary);
+}
+.stage-block-quercy .stage-block-tag {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.stage-block-quercy .stage-block-title {
+  color: var(--color-secondary);
+}
+
+/* ---- Carte artiste : afficher le nom ---- */
+.lineup-board .artist-info {
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.7rem 0.85rem 0.85rem;
+  text-align: center;
+}
+.lineup-board .artist-card h3 {
+  font-size: 1.35rem;
+  margin: 0;
+  line-height: 1.05;
+}
+.lineup-board .artist-status {
+  margin: 0;
+}
+
+/* ---- Scène vide (teasing) ---- */
+.stage-block-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border: 3px dashed var(--color-ink);
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 16px,
+    rgba(26, 10, 0, 0.04) 16px,
+    rgba(26, 10, 0, 0.04) 32px
+  );
+}
+.stage-block-empty p {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink);
+  margin: 0.6rem 0;
+  font-size: 0.95rem;
+}
+.stage-block-empty .more-dots {
+  color: var(--color-secondary);
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+
+/* ---- Note timetable ---- */
+.lineup-timetable-note {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-secondary);
+  padding: 1rem 1.4rem;
+  max-width: 640px;
+  margin: 3.5rem auto 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  .day-tab {
+    padding: 0.6rem 1.6rem;
+  }
+  .day-tab .day-tab-label {
+    font-size: 1.6rem;
+  }
+  .stage-block-head {
+    gap: 0.7rem;
+  }
+}

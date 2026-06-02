@@ -938,8 +938,16 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   opacity: 0.7;
 }
 
+.lineup-cta-full {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
 .lineup-teaser {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   padding: 2.5rem 2rem;
   background: var(--color-ink);
   border: 3px solid var(--color-primary);
