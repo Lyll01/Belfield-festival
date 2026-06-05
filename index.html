@@ -731,13 +731,15 @@
       <p class="section-label">// Restes dans la boucle</p>
       <h2 class="section-title">Restes<br/>informé</h2>
       <p class="lead">Sois le premier informé des annonces artistes et des offres early bird.</p>
-      <form class="newsletter-form" method="POST" action="https://f0e8eb02.sibforms.com/serve/MUIFALMJjBtZAqJQWMewbEtj0mNf-vbcVNQhXIaglWALvDGE9yxWac407iX4HTDtKJ42mlV4sSMpHJkE6dFS75Nvq6zeVa2SXGUlgjnnucAJjt43JZSJMFE0J4E0td7VB0eQJizHbAFc7djg-e7jTLT6Xv2jGFMzg64MqBMTbvk2jFMHRJXV_X98Xsd0qJBCy44bQpDV4Qcx0zhA8w==">
+      <form class="newsletter-form" id="newsletter-form" method="POST" target="newsletter-sink" novalidate action="https://f0e8eb02.sibforms.com/serve/MUIFALMJjBtZAqJQWMewbEtj0mNf-vbcVNQhXIaglWALvDGE9yxWac407iX4HTDtKJ42mlV4sSMpHJkE6dFS75Nvq6zeVa2SXGUlgjnnucAJjt43JZSJMFE0J4E0td7VB0eQJizHbAFc7djg-e7jTLT6Xv2jGFMzg64MqBMTbvk2jFMHRJXV_X98Xsd0qJBCy44bQpDV4Qcx0zhA8w==">
         <input type="email" name="EMAIL" id="EMAIL" placeholder="ton@email.fr" autocomplete="email" required aria-label="Email" />
-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <button type="submit" class="btn btn-primary" id="newsletter-submit">S'inscrire</button>
         <input type="text" name="email_address_check" value="" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;" />
         <input type="hidden" name="locale" value="fr" />
         <input type="hidden" name="html_type" value="simple" />
       </form>
+      <iframe name="newsletter-sink" title="Newsletter" aria-hidden="true" style="display:none;"></iframe>
+      <p class="form-msg" id="newsletter-msg" role="status" aria-live="polite" hidden></p>
       <p class="fine-print">Pas de spam. Que du son. Désinscription possible à tout moment.</p>
     </div>
   </section>
@@ -858,6 +860,50 @@
       stage.addEventListener('mouseleave', start);
       start();
     });
+
+    // Newsletter — validation email + anti double-soumission
+    const nlForm = document.getElementById('newsletter-form');
+    if (nlForm) {
+      const nlEmail = document.getElementById('EMAIL');
+      const nlBtn = document.getElementById('newsletter-submit');
+      const nlMsg = document.getElementById('newsletter-msg');
+      // Format email permissif mais strict (RFC-like simplifié)
+      const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      let submitted = false;
+
+      const showMsg = (text, type) => {
+        nlMsg.textContent = text;
+        nlMsg.className = 'form-msg form-msg--' + type;
+        nlMsg.hidden = false;
+      };
+
+      nlForm.addEventListener('submit', e => {
+        // Bloque toute soumission supplémentaire une fois inscrit
+        if (submitted) { e.preventDefault(); return; }
+
+        const value = nlEmail.value.trim();
+        if (!EMAIL_RE.test(value)) {
+          e.preventDefault();
+          showMsg('Oups, cette adresse mail n’a pas l’air valide. Vérifie le format (ex : ton@email.fr).', 'error');
+          nlEmail.focus();
+          return;
+        }
+
+        // Email valide : on laisse partir vers l'iframe et on verrouille
+        submitted = true;
+        nlBtn.disabled = true;
+        nlEmail.readOnly = true;
+        nlBtn.textContent = 'Inscrit ✓';
+        showMsg('C’est bon, t’es dans la boucle ! 🎉 Surveille ta boîte mail.', 'success');
+      });
+
+      // Si l'utilisateur corrige son adresse après une erreur, on efface le message
+      nlEmail.addEventListener('input', () => {
+        if (!submitted && !nlMsg.hidden && nlMsg.classList.contains('form-msg--error')) {
+          nlMsg.hidden = true;
+        }
+      });
+    }
   </script>
 </body>
 </html>

@@ -1280,6 +1280,30 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   opacity: 0;
   pointer-events: none;
 }
+.newsletter-form button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+.form-msg {
+  max-width: 520px;
+  margin: 0 auto 0.5rem;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 3px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  text-align: center;
+}
+.form-msg--error {
+  background: #FFE0D6;
+  color: var(--color-ink);
+}
+.form-msg--success {
+  background: var(--color-secondary);
+  color: var(--color-cream);
+}
 .fine-print {
   font-family: var(--font-accent);
   font-size: 0.85rem;
