@@ -216,17 +216,6 @@
   transition: transform 0.8s var(--ease);
 }
 .timeline-image:hover img { transform: scale(1.04); }
-.timeline-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, var(--color-ink) 1px, transparent 1.5px);
-  background-size: 6px 6px;
-  opacity: 0.25;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
 .timeline-year {
   position: absolute;
   top: 1rem;

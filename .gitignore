@@ -1,0 +1,6 @@
+# Archive locale des images originales (haute résolution, non servie sur le site)
+_originals/
+
+# macOS
+.DS_Store
+**/.DS_Store

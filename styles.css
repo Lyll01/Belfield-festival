@@ -255,6 +255,17 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 }
 
 /* ============ Header ============ */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.btn .btn-icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -322,6 +333,10 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   transition: width 0.3s var(--ease);
 }
 .nav a:hover::after { width: 100%; }
+
+/* Newsletter shortcut: shown only inside the mobile menu (the styled
+   header button covers desktop). */
+.nav-newsletter { display: none; }
 
 .burger {
   display: none;
@@ -1472,6 +1487,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   }
   .nav.open { transform: translateX(0); }
   .nav a { font-size: 2rem; }
+  .nav-newsletter { display: block; }
   .burger { display: flex; }
   .logo-text { display: none; }
 
