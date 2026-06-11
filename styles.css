@@ -666,16 +666,6 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
     radial-gradient(circle at center, transparent 40%, rgba(107,53,200,0.25) 100%);
   pointer-events: none;
 }
-.stage-slider::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, var(--color-ink) 1px, transparent 1.5px);
-  background-size: 6px 6px;
-  opacity: 0.35;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
 
 .stage-content {
   position: relative;
@@ -716,27 +706,6 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   font-weight: 500;
   max-width: 92%;
   text-shadow: 1px 1px 0 rgba(26,10,0,0.8);
-}
-
-.stage-dots {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  gap: 0.5rem;
-  padding: 0 2rem 1.5rem;
-}
-.stage-dot {
-  width: 28px;
-  height: 5px;
-  background: rgba(255, 245, 230, 0.35);
-  border: 2px solid var(--color-ink);
-  padding: 0;
-  transition: background 0.3s var(--ease), width 0.3s var(--ease);
-}
-.stage-dot:hover { background: rgba(255, 245, 230, 0.6); }
-.stage-dot.active {
-  background: var(--color-primary);
-  width: 44px;
 }
 
 .manifesto {
