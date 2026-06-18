@@ -34,6 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../cookies.css" />
   <link rel="stylesheet" href="legal.css" />
 </head>
 <body class="legal-page">
@@ -138,18 +139,22 @@
         <h2 class="legal-heading">05 · Données personnelles &amp; confidentialité</h2>
         <div class="legal-card">
           <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, tu disposes d'un droit d'accès, de rectification, de suppression et d'opposition sur tes données personnelles.</p>
-          <p><strong>Données collectées :</strong> seules les adresses email soumises volontairement via le formulaire de newsletter sont collectées. Aucune donnée n'est revendue ni partagée avec des tiers à des fins commerciales.</p>
-          <p><strong>Finalité :</strong> t'informer des annonces artistes, de la mise en vente des billets et des actualités du festival.</p>
+          <p><strong>Données collectées :</strong> les adresses email soumises volontairement via le formulaire de newsletter, ainsi que, sous réserve de ton consentement, des données de navigation anonymisées via Google Analytics (voir la section « Cookies &amp; mesure d'audience » ci-dessous). Aucune donnée n'est revendue ni partagée avec des tiers à des fins commerciales.</p>
+          <p><strong>Finalité :</strong> t'informer des annonces artistes, de la mise en vente des billets et des actualités du festival, et mesurer l'audience du site afin de l'améliorer.</p>
           <p><strong>Durée de conservation :</strong> tes données sont conservées tant que tu es abonné à la newsletter. Une désinscription est possible à tout moment via le lien présent dans chaque email.</p>
           <p>Pour exercer tes droits ou poser une question, contacte-nous à <a href="mailto:contact@belfield-festival.fr">contact@belfield-festival.fr</a>.</p>
         </div>
       </article>
 
-      <article class="legal-block">
-        <h2 class="legal-heading">06 · Cookies</h2>
+      <article class="legal-block" id="cookies">
+        <h2 class="legal-heading">06 · Cookies &amp; mesure d'audience</h2>
         <div class="legal-card">
-          <p>Ce site n'utilise aucun cookie de suivi, de publicité ou d'analyse.</p>
-          <p>Seuls les cookies techniques strictement nécessaires au bon fonctionnement du site peuvent être déposés, sans nécessité de consentement préalable.</p>
+          <p>Ce site utilise <strong>Google Analytics</strong>, un outil de mesure d'audience fourni par Google, afin de comprendre la fréquentation du site et de l'améliorer (pages les plus consultées, provenance des visiteurs, type d'appareil, etc.).</p>
+          <p><strong>Consentement préalable :</strong> conformément au RGPD et aux recommandations de la CNIL, <strong>aucun cookie de mesure d'audience n'est déposé avant ton accord</strong>. À ta première visite, une bannière te permet d'<strong>accepter</strong> ou de <strong>refuser</strong> ces cookies. Tant que tu n'as pas accepté, Google Analytics n'est pas chargé.</p>
+          <p>Si tu acceptes, les données collectées sont anonymisées (anonymisation de l'adresse IP) et ne sont jamais revendues ni utilisées à des fins publicitaires.</p>
+          <p><strong>Cookies techniques :</strong> seuls les cookies strictement nécessaires au bon fonctionnement du site peuvent être déposés sans consentement préalable. Ton choix de consentement est mémorisé localement dans ton navigateur afin de ne pas te le redemander à chaque visite.</p>
+          <p><strong>Modifier ton choix :</strong> tu peux à tout moment revenir sur ton consentement en effaçant les données de navigation (cookies et stockage local) de ce site depuis les réglages de ton navigateur ; la bannière de consentement te sera alors de nouveau présentée.</p>
+          <p>Pour en savoir plus sur la politique de confidentialité de Google : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
         </div>
       </article>
 
@@ -161,7 +166,7 @@
       </article>
 
       <div class="legal-footer-note">
-        <p>Dernière mise à jour : avril 2026</p>
+        <p>Dernière mise à jour : juin 2026</p>
         <a href="../index.html" class="link-arrow">← Retour à l'accueil</a>
       </div>
     </div>
@@ -230,5 +235,7 @@
       if (e.target.tagName === 'A') { nav.classList.remove('open'); burger.classList.remove('open'); }
     });
   </script>
+  <!-- Consentement cookies + Google Analytics (RGPD) -->
+  <script src="../cookies.js"></script>
 </body>
 </html>
