@@ -119,13 +119,18 @@
         </button>
       </div>
 
+      <!-- Bascule Artistes / Timetable -->
+      <div class="view-toggle" role="tablist" aria-label="Choisir une vue">
+        <button class="view-toggle-btn active" data-view="artists" aria-selected="true">Artistes</button>
+        <button class="view-toggle-btn" data-view="timetable" aria-selected="false">Timetable</button>
+      </div>
+
       <!-- ===== VENDREDI ===== -->
       <div class="day-panel active" role="tabpanel" id="day-vendredi" aria-labelledby="tab-vendredi">
 
         <!-- Mainstage -->
         <div class="stage-block stage-block-main">
           <div class="stage-block-head">
-            <span class="stage-block-tag">Scène 01</span>
             <h2 class="stage-block-title">La Mainstage</h2>
           </div>
           <div class="artists-grid">
@@ -140,37 +145,28 @@
             </article>
             <article class="artist-card revealed">
               <div class="artist-img">
-                <img src="../images/artistes/FacKabagar.webp" alt="FacKabagar — DJ vendredi à la Mainstage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+                <img src="../images/artistes/FacKabagar.webp" alt="FC Kabagar — DJ vendredi à la Mainstage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
               </div>
               <div class="artist-info">
-                <h3>FacKabagar</h3>
+                <h3>FC Kabagar</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
             <article class="artist-card revealed">
               <div class="artist-img">
-                <img src="../images/artistes/ESKHA.JPEG" alt="ESKHA — DJ électro vendredi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
+                <img src="../images/artistes/ESKHA.JPEG" alt="Eskha — DJ électro vendredi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
               </div>
               <div class="artist-info">
-                <h3>ESKHA</h3>
+                <h3>Eskha</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
             <article class="artist-card revealed">
               <div class="artist-img">
-                <img src="../images/artistes/SCHNAKE.JPEG" alt="SCHNAKE — artiste électro vendredi à la Mainstage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+                <img src="../images/artistes/SCHNAKE.JPEG" alt="Schnake — artiste électro vendredi à la Mainstage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
               </div>
               <div class="artist-info">
-                <h3>SCHNAKE</h3>
-                <span class="artist-status">Confirmé</span>
-              </div>
-            </article>
-            <article class="artist-card revealed">
-              <div class="artist-img">
-                <img src="../images/artistes/ZADIX publi.webp" alt="ZADIX — DJ vendredi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
-              </div>
-              <div class="artist-info">
-                <h3>ZADIX</h3>
+                <h3>Schnake</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
@@ -180,13 +176,96 @@
         <!-- Quercy Stage -->
         <div class="stage-block stage-block-quercy">
           <div class="stage-block-head">
-            <span class="stage-block-tag">Scène 02</span>
             <h2 class="stage-block-title">Quercy Stage</h2>
           </div>
-          <div class="stage-block-empty">
-            <span class="more-dots">· · · · · · · · · ·</span>
-            <p>Les noms de la Quercy Stage du vendredi arrivent très bientôt.</p>
-            <span class="more-dots">· · · · · · · · · ·</span>
+          <div class="artists-grid">
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">B</span>
+              </div>
+              <div class="artist-info">
+                <h3>Bel'Crew</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">N</span>
+              </div>
+              <div class="artist-info">
+                <h3>Nat3</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">G</span>
+              </div>
+              <div class="artist-info">
+                <h3>Gabraize</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">L</span>
+              </div>
+              <div class="artist-info">
+                <h3>Lalude</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">D</span>
+              </div>
+              <div class="artist-info">
+                <h3>D'Ram</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">S</span>
+              </div>
+              <div class="artist-info">
+                <h3>Seg</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===== TIMETABLE VENDREDI ===== -->
+        <div class="timetable">
+          <div class="tt-stage tt-stage-main">
+            <div class="tt-stage-head">
+              <span class="tt-stage-tag">Scène 01</span>
+              <h3 class="tt-stage-name">La Mainstage</h3>
+            </div>
+            <ul class="tt-list">
+              <li class="tt-slot"><span class="tt-time">19:00 — 20:30</span><span class="tt-artist">Bel'Crew</span></li>
+              <li class="tt-slot"><span class="tt-time">20:30 — 22:00</span><span class="tt-artist">DJ Bax</span></li>
+              <li class="tt-slot"><span class="tt-time">22:00 — 23:30</span><span class="tt-artist">FC Kabagar</span></li>
+              <li class="tt-slot"><span class="tt-time">23:30 — 01:00</span><span class="tt-artist">Eskha</span></li>
+              <li class="tt-slot"><span class="tt-time">01:00 — 02:30</span><span class="tt-artist">Schnake</span></li>
+              <li class="tt-slot tt-slot-highlight"><span class="tt-time">02:30 — 03:00</span><span class="tt-artist">Eskha B2B Schnake</span></li>
+            </ul>
+          </div>
+          <div class="tt-stage tt-stage-quercy">
+            <div class="tt-stage-head">
+              <span class="tt-stage-tag">Scène 02</span>
+              <h3 class="tt-stage-name">La Quercy Stage</h3>
+            </div>
+            <ul class="tt-list">
+              <li class="tt-slot"><span class="tt-time">18:15 — 19:30</span><span class="tt-artist">Bel'Crew</span></li>
+              <li class="tt-slot"><span class="tt-time">19:30 — 20:30</span><span class="tt-artist">Nat3</span></li>
+              <li class="tt-slot"><span class="tt-time">21:30 — 22:30</span><span class="tt-artist">Gabraize</span></li>
+              <li class="tt-slot"><span class="tt-time">22:30 — 23:30</span><span class="tt-artist">Lalude</span></li>
+              <li class="tt-slot"><span class="tt-time">23:30 — 00:30</span><span class="tt-artist">D'Ram</span></li>
+              <li class="tt-slot"><span class="tt-time">00:30 — 01:30</span><span class="tt-artist">Seg</span></li>
+              <li class="tt-slot"><span class="tt-time">01:30 — 02:00</span><span class="tt-artist">Bel'Crew</span></li>
+            </ul>
           </div>
         </div>
 
@@ -198,10 +277,45 @@
         <!-- Mainstage -->
         <div class="stage-block stage-block-main">
           <div class="stage-block-head">
-            <span class="stage-block-tag">Scène 01</span>
             <h2 class="stage-block-title">Mainstage</h2>
           </div>
           <div class="artists-grid">
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">?</span>
+              </div>
+              <div class="artist-info">
+                <h3>DJ Contest</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card revealed">
+              <div class="artist-img">
+                <img src="../images/artistes/ZADIX publi.webp" alt="Zadix — DJ samedi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
+              </div>
+              <div class="artist-info">
+                <h3>Zadix</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card revealed">
+              <div class="artist-img">
+                <img src="../images/artistes/MilioRuando.webp" alt="Milio Ruando — artiste samedi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
+              </div>
+              <div class="artist-info">
+                <h3>Milio Ruando</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card revealed">
+              <div class="artist-img">
+                <img src="../images/artistes/Roüge Post Insta.PNG" alt="Rouge — artiste samedi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
+              </div>
+              <div class="artist-info">
+                <h3>Rouge</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
             <article class="artist-card revealed">
               <div class="artist-img">
                 <img src="../images/artistes/artiste1.jpg" alt="Area One — DJ électro samedi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
@@ -220,21 +334,12 @@
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
-            <article class="artist-card revealed">
+            <article class="artist-card coming revealed">
               <div class="artist-img">
-                <img src="../images/artistes/Roüge Post Insta.PNG" alt="Roüge — artiste samedi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
+                <span class="artist-placeholder" aria-hidden="true">B</span>
               </div>
               <div class="artist-info">
-                <h3>Roüge</h3>
-                <span class="artist-status">Confirmé</span>
-              </div>
-            </article>
-            <article class="artist-card revealed">
-              <div class="artist-img">
-                <img src="../images/artistes/MilioRuando.webp" alt="Milio Ruando — artiste samedi à la Mainstage du Belfield Festival 2026, Caussade" loading="lazy" width="600" height="600"/>
-              </div>
-              <div class="artist-info">
-                <h3>Milio Ruando</h3>
+                <h3>Bel'Crew</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
@@ -244,46 +349,96 @@
         <!-- Quercy Stage -->
         <div class="stage-block stage-block-quercy">
           <div class="stage-block-head">
-            <span class="stage-block-tag">Scène 02</span>
             <h2 class="stage-block-title">La Quercy Stage</h2>
           </div>
           <div class="artists-grid">
-            <article class="artist-card revealed">
+            <article class="artist-card coming revealed">
               <div class="artist-img">
-                <img src="../images/artistes/artiste2.jpg" alt="Hortense de Beauharnais — artiste samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+                <span class="artist-placeholder" aria-hidden="true">B</span>
               </div>
               <div class="artist-info">
-                <h3>Hortense de Beauharnais</h3>
+                <h3>Bel'Crew</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+            <article class="artist-card coming revealed">
+              <div class="artist-img">
+                <span class="artist-placeholder" aria-hidden="true">U</span>
+              </div>
+              <div class="artist-info">
+                <h3>Umamiz</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
             <article class="artist-card revealed">
               <div class="artist-img">
-                <img src="../images/artistes/CHIPIE publi.webp" alt="CHIPIE — DJ samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+                <img src="../images/artistes/CHIPIE publi.webp" alt="Chipie — DJ samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
               </div>
               <div class="artist-info">
-                <h3>CHIPIE</h3>
+                <h3>Chipie</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
             <article class="artist-card revealed">
               <div class="artist-img">
-                <img src="../images/artistes/KARLOTA.webp" alt="KARLOTA — DJ samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+                <img src="../images/artistes/KARLOTA.webp" alt="Karlota — DJ samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
               </div>
               <div class="artist-info">
-                <h3>KARLOTA</h3>
+                <h3>Karlota</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
             <article class="artist-card revealed">
               <div class="artist-img">
-                <img src="../images/artistes/MICELLA publi.webp" alt="MICELLA — DJ samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+                <img src="../images/artistes/artiste2.jpg" alt="Hortense 2 B — artiste samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
               </div>
               <div class="artist-info">
-                <h3>MICELLA</h3>
+                <h3>Hortense 2 B</h3>
                 <span class="artist-status">Confirmé</span>
               </div>
             </article>
+            <article class="artist-card revealed">
+              <div class="artist-img">
+                <img src="../images/artistes/MICELLA publi.webp" alt="Micella — DJ samedi à la Quercy Stage du Belfield Festival 2026" loading="lazy" width="600" height="600"/>
+              </div>
+              <div class="artist-info">
+                <h3>Micella</h3>
+                <span class="artist-status">Confirmé</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===== TIMETABLE SAMEDI ===== -->
+        <div class="timetable">
+          <div class="tt-stage tt-stage-main">
+            <div class="tt-stage-head">
+              <span class="tt-stage-tag">Scène 01</span>
+              <h3 class="tt-stage-name">La Mainstage</h3>
+            </div>
+            <ul class="tt-list">
+              <li class="tt-slot"><span class="tt-time">18:30 — 20:00</span><span class="tt-artist">DJ Contest</span></li>
+              <li class="tt-slot"><span class="tt-time">20:00 — 21:30</span><span class="tt-artist">Zadix</span></li>
+              <li class="tt-slot"><span class="tt-time">21:30 — 22:45</span><span class="tt-artist">Milio Ruando</span></li>
+              <li class="tt-slot"><span class="tt-time">22:45 — 00:00</span><span class="tt-artist">Rouge</span></li>
+              <li class="tt-slot"><span class="tt-time">00:00 — 01:15</span><span class="tt-artist">Area One</span></li>
+              <li class="tt-slot"><span class="tt-time">01:15 — 02:30</span><span class="tt-artist">Protokseed</span></li>
+              <li class="tt-slot tt-slot-highlight"><span class="tt-time">02:30 — 03:00</span><span class="tt-artist">Bel'Crew</span></li>
+            </ul>
+          </div>
+          <div class="tt-stage tt-stage-quercy">
+            <div class="tt-stage-head">
+              <span class="tt-stage-tag">Scène 02</span>
+              <h3 class="tt-stage-name">La Quercy Stage</h3>
+            </div>
+            <ul class="tt-list">
+              <li class="tt-slot"><span class="tt-time">18:15 — 19:30</span><span class="tt-artist">Bel'Crew</span></li>
+              <li class="tt-slot"><span class="tt-time">19:30 — 21:00</span><span class="tt-artist">Umamiz</span></li>
+              <li class="tt-slot"><span class="tt-time">21:00 — 22:15</span><span class="tt-artist">Chipie</span></li>
+              <li class="tt-slot"><span class="tt-time">22:15 — 23:30</span><span class="tt-artist">Karlota</span></li>
+              <li class="tt-slot"><span class="tt-time">23:30 — 01:00</span><span class="tt-artist">Hortense 2 B</span></li>
+              <li class="tt-slot"><span class="tt-time">01:00 — 02:00</span><span class="tt-artist">Micella</span></li>
+            </ul>
           </div>
         </div>
 
@@ -305,8 +460,8 @@
         </div>
       </div>
 
-      <!-- Note timetable à venir -->
-      <p class="lineup-timetable-note">⏱ La Timetable sera dévoilée quelques semaines avant le festival.</p>
+      <!-- Note timetable -->
+      <p class="lineup-timetable-note">⏱ Horaires prévisionnels — susceptibles d'évoluer d'ici le festival.</p>
 
     </div>
   </section>
@@ -376,6 +531,21 @@
           p.classList.toggle('active', on);
           p.hidden = !on;
         });
+      });
+    });
+
+    // Bascule Artistes / Timetable
+    const board = document.querySelector('.lineup-board');
+    const viewBtns = document.querySelectorAll('.view-toggle-btn');
+    viewBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const view = btn.dataset.view;
+        viewBtns.forEach(b => {
+          const on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        board.classList.toggle('show-timetable', view === 'timetable');
       });
     });
   </script>

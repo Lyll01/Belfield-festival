@@ -245,6 +245,146 @@
   opacity: 0.6;
 }
 
+/* ---- Bascule Artistes / Timetable ---- */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: -1.5rem auto 3rem;
+  width: fit-content;
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  background: var(--color-cream);
+}
+.view-toggle-btn {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: transparent;
+  border: none;
+  padding: 0.55rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.view-toggle-btn + .view-toggle-btn {
+  border-left: 3px solid var(--color-ink);
+}
+.view-toggle-btn.active {
+  background: var(--color-primary);
+  color: var(--color-cream);
+}
+
+/* Bascule d'affichage : artistes <-> timetable */
+.timetable { display: none; }
+.lineup-board.show-timetable .stage-block { display: none; }
+.lineup-board.show-timetable .day-panel.active .timetable {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  animation: dayFade 0.4s var(--ease);
+}
+
+/* ---- Timetable ---- */
+.tt-stage {
+  border: 3px solid var(--color-ink);
+  background: var(--color-cream);
+  box-shadow: 7px 7px 0 var(--color-primary);
+}
+.tt-stage-quercy {
+  box-shadow: 7px 7px 0 var(--color-secondary);
+}
+.tt-stage-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 3px solid var(--color-ink);
+  background: var(--color-secondary);
+}
+.tt-stage-main .tt-stage-head {
+  background: var(--color-primary);
+}
+.tt-stage-tag {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  padding: 0.25rem 0.6rem;
+  border: 2px solid var(--color-ink);
+  flex-shrink: 0;
+}
+.tt-stage-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+  line-height: 1;
+  color: var(--color-cream);
+}
+.tt-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tt-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.85rem 1.2rem;
+  border-bottom: 2px dashed rgba(26, 10, 0, 0.25);
+  transition: background 0.2s var(--ease);
+}
+.tt-slot:last-child {
+  border-bottom: none;
+}
+.tt-slot:hover {
+  background: rgba(255, 122, 0, 0.1);
+}
+.tt-stage-quercy .tt-slot:hover {
+  background: rgba(123, 47, 190, 0.1);
+}
+.tt-time {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+}
+.tt-stage-quercy .tt-time {
+  color: var(--color-secondary);
+}
+.tt-artist {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  line-height: 1;
+}
+.tt-slot-highlight {
+  background: var(--color-ink);
+}
+.tt-slot-highlight .tt-time {
+  color: var(--color-primary);
+}
+.tt-stage-quercy .tt-slot-highlight .tt-time {
+  color: var(--color-cream);
+}
+.tt-slot-highlight .tt-artist {
+  color: var(--color-cream);
+}
+.tt-slot-highlight:hover {
+  background: var(--color-ink);
+}
+
 /* ---- Note timetable ---- */
 .lineup-timetable-note {
   text-align: center;
@@ -272,5 +412,13 @@
   }
   .stage-block-head {
     gap: 0.7rem;
+  }
+  .lineup-board.show-timetable .day-panel.active .timetable {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .view-toggle-btn {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.4rem;
   }
 }
