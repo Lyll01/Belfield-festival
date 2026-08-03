@@ -4,3 +4,5 @@ _originals/
 # macOS
 .DS_Store
 **/.DS_Store
+
+emails/
