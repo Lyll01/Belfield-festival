@@ -218,6 +218,19 @@
   <!-- DNS prefetch billetterie externe -->
   <link rel="dns-prefetch" href="https://shotgun.live" />
 
+  <!-- Consent Mode par défaut (RGPD) — doit précéder le tag Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+  </script>
+
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -255,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         Newsletter
       </a>
-      <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" class="btn btn-primary btn-sm">Billetterie</a>
+      <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" data-gtm-click="billetterie" class="btn btn-primary btn-sm">Billetterie</a>
     </div>
     <button class="burger" aria-label="Menu" id="burger">
       <span></span><span></span><span></span>
@@ -333,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="hero-actions">
-        <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" class="btn btn-primary btn-lg">🔥 Prendre mes billets</a>
+        <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" data-gtm-click="billetterie" class="btn btn-primary btn-lg">🔥 Prendre mes billets</a>
         <a href="pages/lineup.html" class="btn btn-outline btn-lg">Voir le lineup</a>
       </div>
     </div>
@@ -582,7 +595,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="pass-desc">Festival complet</p>
         </div>
       </div>
-      <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" class="btn btn-accent btn-lg">🎟 Accéder à la billetterie</a>
+      <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" data-gtm-click="billetterie" class="btn btn-accent btn-lg">🎟 Accéder à la billetterie</a>
     </div>
   </section>
 
@@ -770,7 +783,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="pages/infos.html">Infos pratiques</a>
         <a href="#editions">Éditions</a>
         <a href="#faq">FAQ</a>
-        <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" rel="noopener">Billetterie</a>
+        <a href="https://shotgun.live/fr/festivals/belfield-festival-2026" data-gtm-click="billetterie" rel="noopener">Billetterie</a>
       </div>
       <div>
         <p class="footer-title">// Suivre</p>

@@ -1,46 +1,21 @@
 /* ============================================================
-   Belfield Festival — Consentement cookies + Google Analytics
+   Belfield Festival — Consentement cookies (Google Consent Mode v2)
    - RGPD : aucun cookie de mesure n'est déposé avant le consentement.
-   - Google Consent Mode v2 : tout est "denied" par défaut.
-   - GA (G-4TJS7727BF) n'est chargé qu'après acceptation.
+   - Le consent mode par défaut ("denied") est posé dans le <head>,
+     avant le tag Google Tag Manager. Ce fichier ne fait que gérer
+     la bannière et pousser la mise à jour du consentement ; c'est
+     GTM qui décide, tag par tag, ce qui a le droit de se déclencher.
    ============================================================ */
 (function () {
   'use strict';
 
-  var GA_ID = 'G-4TJS7727BF';
   var STORE_KEY = 'belfield_cookie_consent'; // 'granted' | 'denied'
-
-  // --- Consent Mode : socle commun (toujours exécuté) -------------------
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  window.gtag = gtag;
-
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied',
-    wait_for_update: 500
-  });
-  gtag('js', new Date());
 
   function readChoice() {
     try { return localStorage.getItem(STORE_KEY); } catch (e) { return null; }
   }
   function saveChoice(v) {
     try { localStorage.setItem(STORE_KEY, v); } catch (e) {}
-  }
-
-  // --- Chargement effectif de GA --------------------------------------
-  var gaLoaded = false;
-  function loadGA() {
-    if (gaLoaded) return;
-    gaLoaded = true;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(s);
-    gtag('config', GA_ID, { anonymize_ip: true });
   }
 
   function grant() {
@@ -50,7 +25,6 @@
       ad_personalization: 'denied',
       analytics_storage: 'granted'
     });
-    loadGA();
   }
 
   // --- Lien vers la politique cookies (chemin relatif auto) -----------
