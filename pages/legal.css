@@ -85,6 +85,66 @@
   border-bottom-color: var(--color-ink);
 }
 
+/* --- Sous-titres internes --- */
+.legal-subheading {
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin: 2rem 0 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--color-primary);
+}
+.legal-card > .legal-subheading:first-child { margin-top: 0; }
+
+/* --- Tableaux (traitements, cookies) --- */
+.legal-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+  border: 3px solid var(--color-ink);
+  -webkit-overflow-scrolling: touch;
+}
+.legal-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+.legal-table th,
+.legal-table td {
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 2px solid var(--color-ink);
+}
+.legal-table th {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border-bottom-width: 3px;
+}
+.legal-table tbody tr:last-child td { border-bottom: none; }
+.legal-table tbody tr:nth-child(even) td { background: rgba(0, 0, 0, 0.04); }
+.legal-table td:first-child { font-weight: 700; }
+.legal-table code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82em;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 0.12em 0.4em;
+  white-space: nowrap;
+}
+
+.legal-card button[data-cookie-settings] { cursor: pointer; }
+
 .legal-footer-note {
   margin-top: 4rem;
   padding-top: 2.5rem;

@@ -1298,6 +1298,66 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   font-weight: 600;
 }
 
+/* ============ Note RGPD repliable (newsletter) ============ */
+.privacy-note {
+  max-width: 560px;
+  margin: 0.85rem auto 0;
+  text-align: left;
+}
+.privacy-note > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-ink);
+  opacity: 0.7;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.1rem;
+  transition: opacity 0.2s var(--ease);
+}
+.privacy-note > summary::-webkit-details-marker { display: none; }
+.privacy-note > summary::before {
+  content: '+';
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1;
+  font-weight: 700;
+}
+.privacy-note[open] > summary::before { content: '−'; }
+.privacy-note > summary:hover { opacity: 1; }
+.privacy-note > summary:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+.privacy-note > p {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  opacity: 0.85;
+  margin: 0.75rem 0 0;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.privacy-note > p a {
+  color: inherit;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-secondary);
+}
+.privacy-note > p a:hover { color: var(--color-secondary); }
+
+/* La note est centrée avec le formulaire mais son texte reste lisible à gauche */
+.center .privacy-note > summary { justify-content: center; }
+.center .privacy-note { text-align: center; }
+.center .privacy-note > p { text-align: left; }
+
 /* ============ Footer ============ */
 .site-footer {
   background: var(--color-ink);
