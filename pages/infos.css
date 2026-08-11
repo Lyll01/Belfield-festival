@@ -216,6 +216,18 @@
   box-shadow: 11px 11px 0 var(--color-primary);
 }
 
+.acces-card a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
+}
+.acces-card a:hover,
+.acces-card a:focus-visible {
+  color: var(--color-primary);
+}
+
 .acces-icon {
   width: 64px;
   height: 64px;
