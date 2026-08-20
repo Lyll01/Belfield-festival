@@ -912,6 +912,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         nlBtn.disabled = true;
         nlEmail.readOnly = true;
         nlBtn.textContent = 'Inscrit ✓';
+        // GTM : conversion newsletter
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'newsletter_signup',
+          form_id: 'newsletter-form',
+          form_location: 'accueil'
+        });
         showMsg('C’est bon, t’es dans la boucle ! 🎉 Surveille ta boîte mail.', 'success');
       });
 
