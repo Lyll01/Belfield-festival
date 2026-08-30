@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://belfield-festival.fr/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,20 +13,52 @@
     </image:image>
   </url>
   <url>
-    <loc>https://belfield-festival.fr/pages/lineup.html</loc>
-    <lastmod>2026-06-02</lastmod>
+    <loc>https://belfield-festival.fr/pages/soirees.html</loc>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://belfield-festival.fr/images/soirees/belfield-invite-kirk.webp</image:loc>
+      <image:title>Belfield invite KIRK — 25 septembre 2026 au Rex de Toulouse</image:title>
+      <image:caption>Affiche de la soirée Belfield invite KIRK avec D'RAM, LALUDE et SEG au Rex de Toulouse</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://belfield-festival.fr/pages/recap-2026.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://belfield-festival.fr/images/2026/closing-8.webp</image:loc>
+      <image:title>Belfield Festival 2026 — la closing de la 7ème édition</image:title>
+      <image:caption>La foule du Belfield Festival 2026 bras levés sous les lasers pendant la closing, Parc de la Lère, Caussade</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://belfield-festival.fr/images/2026/publique-24.webp</image:loc>
+      <image:title>Le public du Belfield Festival 2026</image:title>
+      <image:caption>Mains levées dans le public du Belfield Festival 2026 sous les lumières de la Mainstage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://belfield-festival.fr/images/2026/oieslympiades-12.webp</image:loc>
+      <image:title>Les Oieslympiades du Belfield Festival 2026</image:title>
+      <image:caption>Course en sac pendant les Oieslympiades du Belfield Festival 2026</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://belfield-festival.fr/pages/lineup.html</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://belfield-festival.fr/pages/histoire.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://belfield-festival.fr/pages/infos.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

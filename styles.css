@@ -1523,7 +1523,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   .logo-text { display: none; }
 
   .hero { padding: 3rem var(--gutter) 4rem; min-height: auto; }
-  .intro, .lineup, .tickets-banner, .infos, .editions, .newsletter, .faq { padding: 5rem 0; }
+  .intro, .lineup, .tickets-banner, .recap-banner, .afterparty-section, .next-party, .infos, .editions, .newsletter, .faq { padding: 5rem 0; }
   .faq-item summary { font-size: 1rem; padding: 1rem 1.1rem; }
   .faq-item p { padding: 0 1.1rem 1.1rem; }
 
@@ -1561,3 +1561,372 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
 
   .manifesto li { font-size: 1.1rem; }
 }
+
+/* ============================================================
+   MODE APRÈS-FESTIVAL — 7ème édition passée
+   ============================================================ */
+
+/* ---- Bloc merci (remplace le compte à rebours) ---- */
+.afterparty-section {
+  padding: 5rem 0;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border-top: 3px solid var(--color-ink);
+  border-bottom: 3px solid var(--color-ink);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.afterparty-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--color-primary) 1.5px, transparent 2px);
+  background-size: 18px 18px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.afterparty-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--color-primary);
+  text-shadow: 4px 4px 0 var(--color-secondary-deep), 8px 8px 0 var(--color-secondary);
+  position: relative;
+  z-index: 2;
+}
+.afterparty-text {
+  max-width: 44rem;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+  opacity: 0.92;
+  position: relative;
+  z-index: 2;
+}
+.afterparty-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.afterparty-note {
+  margin-top: 1.6rem;
+  font-size: 0.85rem;
+  opacity: 0.65;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- CTA récap dans l'intro ---- */
+.intro-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* ---- Bandeau récap photos (remplace la billetterie) ---- */
+.recap-banner {
+  padding: 6rem 0;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--color-ink);
+  border-bottom: 3px solid var(--color-ink);
+}
+.recap-banner .section-title {
+  color: var(--color-primary);
+  text-shadow: 4px 4px 0 var(--color-secondary-deep), 8px 8px 0 var(--color-secondary);
+}
+.recap-banner-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.recap-banner-text .lead.light { color: var(--color-cream); opacity: 0.9; margin-bottom: 2rem; }
+.recap-banner-credit { margin-top: 1.2rem; font-size: 0.8rem; opacity: 0.55; letter-spacing: 0.05em; }
+
+.recap-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 130px;
+  gap: 0.7rem;
+}
+.recap-thumb {
+  overflow: hidden;
+  border: 3px solid var(--color-cream);
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.recap-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+.recap-thumb:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--color-primary); }
+.recap-thumb:hover img { transform: scale(1.08); }
+.recap-thumb-lg { grid-column: span 2; grid-row: span 2; }
+.recap-banner-grid .recap-thumb:nth-child(4) { grid-column: span 2; }
+
+/* ---- Tuile 2026 dans la galerie éditions ---- */
+.gallery-item-new {
+  box-shadow: 6px 6px 0 var(--color-secondary);
+  border-color: var(--color-ink);
+}
+.gallery-item-new:hover { box-shadow: 10px 10px 0 var(--color-secondary); }
+.gallery-badge {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  z-index: 3;
+  font-family: var(--font-accent);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.7rem;
+  background: var(--color-primary);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+  .recap-banner-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .recap-banner-text { text-align: center; }
+  .recap-banner-grid { grid-auto-rows: 110px; }
+}
+@media (max-width: 640px) {
+  .afterparty-section, .recap-banner { padding: 4rem 0; }
+  .afterparty-actions .btn { width: 100%; }
+  .recap-banner-grid { grid-auto-rows: 95px; gap: 0.5rem; }
+}
+
+/* ---- Tuile 2026 mise en avant (section Éditions) ---- */
+.gallery-featured {
+  display: block;
+  position: relative;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-secondary);
+  overflow: hidden;
+  aspect-ratio: 21 / 8;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.gallery-featured:hover { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 var(--color-secondary); }
+.gallery-featured img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transition: transform 0.6s var(--ease);
+}
+.gallery-featured:hover img { transform: scale(1.05); }
+.gallery-featured-body {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(26,10,0,0.35), rgba(26,10,0,0.75));
+}
+.gallery-featured-year {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: 0.9;
+  color: var(--color-cream);
+  text-shadow: 4px 4px 0 var(--color-secondary);
+}
+.gallery-featured-text {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  color: var(--color-primary-light);
+}
+.gallery-featured .gallery-badge { position: static; }
+
+@media (max-width: 640px) {
+  .gallery-featured { aspect-ratio: 4 / 3; }
+}
+
+/* ---- Bandeau « édition terminée » sur les pages archivées ---- */
+.archive-note {
+  display: inline-block;
+  margin: 1.5rem auto 0;
+  padding: 0.85rem 1.4rem;
+  max-width: 44rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border: 3px solid var(--color-ink);
+  border-radius: 4px;
+  box-shadow: 5px 5px 0 var(--color-secondary);
+}
+.archive-note strong { color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.06em; }
+.archive-note a { color: var(--color-primary-light); text-decoration: underline; font-weight: 600; }
+.archive-note a:hover { color: var(--color-cream); }
+
+/* ---- Boutons outline sur fond sombre ---- */
+.afterparty-section .btn-outline,
+.rc-hero .btn-outline,
+.recap-banner .btn-outline {
+  background: transparent;
+  color: var(--color-cream);
+  border-color: var(--color-cream);
+  box-shadow: 5px 5px 0 var(--color-secondary);
+}
+.afterparty-section .btn-outline:hover,
+.rc-hero .btn-outline:hover,
+.recap-banner .btn-outline:hover {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-secondary);
+}
+
+/* ---- Nav plus dense (8 entrées) ---- */
+@media (min-width: 981px) {
+  .site-header .nav { gap: 1.25rem; }
+  .site-header .nav a { font-size: 0.82rem; white-space: nowrap; }
+  .site-header .logo-text { white-space: nowrap; }
+}
+
+/* ---- Bloc « prochaine soirée » sur l'accueil ---- */
+.next-party {
+  padding: 6rem 0;
+  background: var(--color-secondary-deep);
+  color: var(--color-cream);
+  border-top: 3px solid var(--color-ink);
+  border-bottom: 3px solid var(--color-ink);
+  position: relative;
+  overflow: hidden;
+}
+.next-party::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--color-cream) 1.4px, transparent 2px);
+  background-size: 18px 18px;
+  opacity: 0.09;
+  pointer-events: none;
+}
+.next-party-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.next-party-poster {
+  display: block;
+  border: 3px solid var(--color-cream);
+  border-radius: 3px;
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: 10px 10px 0 var(--color-primary);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.next-party-poster:hover { transform: translate(-4px, -4px); box-shadow: 14px 14px 0 var(--color-primary); }
+.next-party-poster img { width: 100%; height: auto; }
+
+.next-party .section-title { color: var(--color-cream); }
+.next-party .lead { color: var(--color-cream); opacity: 0.9; }
+.next-party .lead strong { color: var(--color-primary-light); }
+
+.next-party-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  padding: 1.2rem 0;
+  border-top: 2px solid rgba(255, 245, 230, 0.25);
+  border-bottom: 2px solid rgba(255, 245, 230, 0.25);
+}
+.next-party-date { display: flex; align-items: center; gap: 0.8rem; margin: 0; }
+.npd-day {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 0.8;
+  color: var(--color-primary);
+}
+.npd-rest { display: flex; flex-direction: column; }
+.npd-month {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.92rem;
+}
+.npd-weekday {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+.next-party-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+.next-party-name strong { color: var(--color-primary); font-weight: 400; }
+.next-party-lineup {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
+}
+
+.afterparty-note a { color: var(--color-primary-light); text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .next-party-inner { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .next-party-poster { width: 100%; max-width: 340px; margin-inline: auto; }
+  .next-party-text { text-align: center; min-width: 0; }
+  .next-party-meta { justify-content: center; }
+}
+@media (max-width: 640px) {
+  .next-party { padding: 4rem 0; }
+  .npd-day { font-size: 3.2rem; }
+  .next-party-name { font-size: 1.5rem; }
+}
+
+/* ---- Boutons : autoriser le retour à la ligne sur petits écrans ---- */
+@media (max-width: 700px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+  }
+  .btn-lg { font-size: 0.95rem; padding: 0.9rem 1.2rem; }
+}
+
+.next-party-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.next-party .btn-outline {
+  background: transparent;
+  color: var(--color-cream);
+  border-color: var(--color-cream);
+  box-shadow: 5px 5px 0 var(--color-primary);
+}
+.next-party .btn-outline:hover {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-primary);
+}
+@media (max-width: 900px) { .next-party-actions { justify-content: center; } }
