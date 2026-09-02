@@ -253,6 +253,24 @@
   color: var(--color-ink);
 }
 .so-form input[type="email"]:focus { outline: 3px solid var(--color-primary-light); outline-offset: 2px; }
+.so-form .hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.so-form .cf-turnstile {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+.so-form button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
 .so-more-legal { font-size: .8rem; opacity: .7; margin: .5rem 0 1.5rem; position: relative; z-index: 2; }
 .so-more-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2; }
 .so-more .form-msg { color: var(--color-primary-light); font-weight: 600; position: relative; z-index: 2; }
