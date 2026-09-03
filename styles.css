@@ -1512,9 +1512,13 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
     background: var(--color-bg);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    padding: 5rem 2rem 3rem;
+    /* pas de justify-content: center — quand la liste dépasse la hauteur de
+       l'écran, le centrage rogne le haut du menu et le rend inatteignable.
+       Les pseudo-éléments à marge auto centrent quand il y a la place,
+       et laissent la liste défiler normalement sinon. */
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 4.5rem 1.5rem 2.5rem;
     overflow-y: auto;
     overscroll-behavior: contain;
     transform: translateX(100%);
@@ -1522,8 +1526,10 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
     margin: 0;
     z-index: 101;
   }
+  .nav::before,
+  .nav::after { content: ''; display: block; margin: auto; flex: 0 0 0; }
   .nav.open { transform: translateX(0); }
-  .nav a { font-size: 1.75rem; }
+  .nav a { font-size: 1.5rem; text-align: center; }
   .nav-newsletter { display: block; }
   .burger { display: flex; }
   .logo-text { display: none; }
@@ -1936,3 +1942,14 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; }
   box-shadow: 7px 7px 0 var(--color-primary);
 }
 @media (max-width: 900px) { .next-party-actions { justify-content: center; } }
+
+/* ---- Menu burger : compacter quand l'écran est court (petits téléphones,
+       ou barre d'adresse visible) pour que les 8 entrées tiennent sans défilement ---- */
+@media (max-width: 760px) and (max-height: 730px) {
+  .nav { gap: 0.7rem; padding: 4rem 1.25rem 2rem; }
+  .nav a { font-size: 1.25rem; padding: 0.3rem 0; }
+}
+@media (max-width: 760px) and (max-height: 580px) {
+  .nav { gap: 0.5rem; padding: 3.5rem 1.25rem 1.5rem; }
+  .nav a { font-size: 1.05rem; padding: 0.25rem 0; }
+}
