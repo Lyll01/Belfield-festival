@@ -169,6 +169,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="rc-stat"><span class="rc-stat-num">02</span><span class="rc-stat-label">Jours</span></div>
         <div class="rc-stat"><span class="rc-stat-num">02</span><span class="rc-stat-label">Scènes</span></div>
         <div class="rc-stat"><span class="rc-stat-num">20</span><span class="rc-stat-label">Artistes</span></div>
+        <div class="rc-stat"><span class="rc-stat-num">2&#8239;500</span><span class="rc-stat-label">Festivaliers</span></div>
+        <div class="rc-stat"><span class="rc-stat-num">80</span><span class="rc-stat-label">Bénévoles</span></div>
       </div>
     </div>
   </section>
@@ -178,8 +180,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container narrow center">
       <p class="section-label">// Le mot de l'équipe</p>
       <h2 class="section-title">Merci<br/>à vous</h2>
-      <p class="lead">Merci au public venu tout donner du vendredi soir jusqu'à la dernière basse du samedi.
-        Merci aux artistes qui ont retourné la Mainstage et la Quercy Stage. Merci aux bénévoles, à la prod, aux food trucks,
+      <p class="lead">Merci aux <strong>2&#8239;500 festivaliers</strong> venus tout donner du vendredi soir jusqu'à la dernière basse du samedi.
+        Merci aux artistes qui ont retourné la Mainstage et la Quercy Stage. Merci aux <strong>80 bénévoles</strong>, à la prod, aux food trucks,
         aux voisins et à tous ceux qui rendent ce week-end possible chaque été.</p>
       <ul class="manifesto">
         <li>✨ Belfield, c'est une communauté.</li>
@@ -323,7 +325,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="rc-lb-nav rc-lb-next" id="rc-lb-next" aria-label="Photo suivante">›</button>
     <figure class="rc-lb-figure">
       <img id="rc-lb-img" src="" alt="" />
-      <figcaption id="rc-lb-cap"></figcaption>
     </figure>
   </div>
 
@@ -434,7 +435,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Lightbox
     const lb = document.getElementById('rc-lightbox');
     const lbImg = document.getElementById('rc-lb-img');
-    const lbCap = document.getElementById('rc-lb-cap');
     let idx = 0;
     const visible = () => figures.filter(f => !f.hidden);
 
@@ -452,7 +452,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!fig) return;
       lbImg.src = fig.dataset.full;
       lbImg.alt = fig.dataset.alt;
-      lbCap.textContent = fig.dataset.alt + ' — © @POLISSES';
     }
     function step(n) {
       const list = visible();
